@@ -16,7 +16,7 @@ const About = () => {
         const stats = statsRef.current.children
 
         // Skills animation
-        gsap.fromTo(skills, 
+        gsap.fromTo(skills,
             { opacity: 0, y: 50 },
             {
                 opacity: 1,
@@ -50,13 +50,19 @@ const About = () => {
     }, [])
 
     const skills = [
-        { name: "React/Next.js", level: 95, color: "from-blue-500 to-cyan-500" },
-        { name: "Node.js/Golang", level: 90, color: "from-green-500 to-emerald-500" },
-        { name: "Python/C++", level: 88, color: "from-yellow-500 to-orange-500" },
-        { name: "PostgreSQL/Oracle", level: 85, color: "from-purple-500 to-pink-500" },
-        { name: "AWS/DevOps", level: 82, color: "from-red-500 to-rose-500" },
+        { name: "React", level: 95, color: "from-sky-500 to-blue-500" },
+        { name: "Next.js", level: 93, color: "from-blue-600 to-gray-800" },
+        { name: "Node.js", level: 90, color: "from-green-500 to-lime-500" },
+        { name: "Golang", level: 89, color: "from-cyan-600 to-blue-600" },
+        { name: "Python", level: 88, color: "from-yellow-400 to-orange-400" },
+        { name: "C++", level: 85, color: "from-gray-500 to-blue-400" },
+        { name: "PostgreSQL", level: 85, color: "from-purple-600 to-purple-400" },
+        { name: "Oracle", level: 82, color: "from-orange-600 to-red-500" },
+        { name: "AWS", level: 82, color: "from-yellow-500 to-orange-500" },
+        { name: "DevOps", level: 80, color: "from-red-600 to-pink-500" },
         { name: "TypeScript", level: 92, color: "from-indigo-500 to-blue-500" }
-    ]
+    ];
+
 
     const stats = [
         { number: "50+", label: "Projects Completed", icon: "🚀" },
@@ -102,14 +108,16 @@ const About = () => {
                             <div className="absolute inset-0 bg-gradient-to-br from-violet-600/5 to-purple-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <h3 className="text-2xl font-bold mb-4 text-violet-300">My Journey</h3>
                             <p className="text-gray-300 leading-relaxed mb-4">
-                                Started my coding journey at 16, fascinated by the power of technology to solve real-world problems. 
-                                What began as curiosity about how websites work evolved into a passion for building scalable, 
-                                high-performance systems that millions can rely on.
+                                Started my coding journey at 16, fascinated by the power of technology to solve real-world problems.
+                                What began as a simple curiosity—wondering how websites and apps actually work—soon evolved into a deep passion for building scalable, high-performance systems that people can trust.
+                                I spent countless hours learning how things work under the hood—first with static sites, then diving into programming languages, backend systems, and cloud infrastructure. 
+
+                                Today, I’m driven by the same curiosity, but now with a clear mission: to engineer systems that not only solve problems but scale with impact.
                             </p>
                             <p className="text-gray-300 leading-relaxed">
-                                Today, I architect full-stack solutions that bridge the gap between complex backend logic and 
-                                stunning user experiences. My approach combines technical excellence with creative problem-solving, 
-                                ensuring every project delivers both functionality and delight.
+                                Today, I architect full-stack solutions that bridge the gap between complex backend logic and
+                                stunning user experiences. My approach combines technical excellence with creative problem-solving,
+                                ensuring every project delivers both functionality and delight.I truly love what I do, and that joy fuels everything I build.
                             </p>
                         </div>
 
@@ -117,8 +125,8 @@ const About = () => {
                             <div className="absolute inset-0 bg-gradient-to-br from-violet-600/5 to-purple-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <h3 className="text-2xl font-bold mb-4 text-violet-300">Philosophy</h3>
                             <p className="text-gray-300 leading-relaxed">
-                                "Code is poetry in motion." I believe in writing clean, maintainable code that not only works 
-                                flawlessly but also tells a story. Every function, every component, every API endpoint is crafted 
+                                "Code is poetry in motion." I believe in writing clean, maintainable code that not only works
+                                flawlessly but also tells a story. Every function, every component, every API endpoint is crafted
                                 with intention, scalability, and user experience at its core.
                             </p>
                         </div>
@@ -183,23 +191,7 @@ const About = () => {
                     </div>
                 </motion.div>
 
-                {/* Call to Action */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                    viewport={{ once: true }}
-                    className="text-center mt-16"
-                >
-                    <p className="text-xl text-gray-300 mb-6">Ready to build something extraordinary together?</p>
-                    <motion.button
-                        whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)" }}
-                        whileTap={{ scale: 0.95 }}
-                        className="cursor-none px-8 py-4 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-violet-600/50"
-                    >
-                        Let's Connect
-                    </motion.button>
-                </motion.div>
+
             </div>
         </section>
     )

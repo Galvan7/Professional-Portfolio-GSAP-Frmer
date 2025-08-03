@@ -2,10 +2,10 @@ import { motion } from "framer-motion"
 import Spline from '@splinetool/react-spline';
 const Hero = () => {
     return (
-        <section className="h-screen bg-gradient-to-b from-violet-900 to-black flex xl:flex-row flex-col-reverse items-center justify-between lg:px-24 px-10 relative overflow-hidden">
+        <section className="min-h-screen bg-gradient-to-b from-violet-900 to-black flex xl:flex-row flex-col-reverse items-center justify-between lg:px-24 px-10 relative">
 
             {/* left section  */}
-            <div className="z-40 xl:mb-0 mb-[20%]">
+            <div className="z-40 xl:mb-0 mb-[-20%] space-y-10">
                 <motion.h1 initial={{ opacity: 0, y: 80 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
@@ -15,8 +15,8 @@ const Hero = () => {
                         delay: 1.3,
                         duration: 1.5
                     }}
-                    className="text-4xl md:text-6xl lg:text-6xl z-10 font-bold mb-6">Code. Ship.<br /> Prove. Repeat.</motion.h1>
-                <motion.p
+                    className="text-4xl md:text-6xl lg:text-6xl z-10 font-bold">Code. Ship.<br /> Prove. Repeat.</motion.h1>
+                <motion.div
                     initial={{ opacity: 0, y: 80 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
@@ -26,11 +26,14 @@ const Hero = () => {
                         delay: 1.8,
                         duration: 1.5
                     }}
-                    className="text-md md:text-xl lg:text-xl text-purple-200 max-w-2xl">
-                    I’m Aman Goswami — a full-stack developer building fast, scalable, and reliable systems.I specialize in backend engineering with Golang, Node.js, Python, and C++, using PostgreSQL and Oracle. 
-On the frontend, I craft interactive UIs with React, Next.js, and TypeScript, powered by tools like GSAP, Spline, and Framer Motion. 
-From cloud infrastructure (AWS) to DevOps, I deliver production-ready solutions end to end.
-                </motion.p>
+                    className="text-md md:text-xl lg:text-xl text-purple-200 max-w-2xl space-y-2 text-justify">
+                    <p> I’m Aman Goswami — a full-stack developer building scalable, high-performance systems.
+                        On the backend, I specialize in building robust APIs and microservices using Golang, Node.js, Python, and C++, with strong expertise in relational databases like PostgreSQL and OracleDB. <br /></p>
+                    <p>On the frontend, I craft and dynamic UIs with React, Next.js, and TypeScript, powered by Framer Motion, GSAP, and Spline. <br />
+                    </p>
+                    <p>I manage cloud infrastructure on AWS, follow DevOps best practices, and deliver end-to-end, production-ready solutions.
+                        </p>
+                </motion.div>
             </div>
 
             {/* right section  */}
