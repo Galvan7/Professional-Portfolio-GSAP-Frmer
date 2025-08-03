@@ -1,35 +1,12 @@
-Personal Portfolio
-A modern, visually stunning personal portfolio showcasing my skills, projects, and experience as a full-stack developer. Built with React, Next.js, Tailwind CSS, Framer Motion, GSAP, and Spline, this portfolio delivers a seamless and interactive user experience with smooth animations and a custom cursor effect.
-Features
+# React + Vite
 
-Dynamic Animations: Smooth transitions and scroll-triggered animations powered by Framer Motion and GSAP.
-3D Visuals: Integrated Spline 3D scenes for an immersive hero section.
-Responsive Design: Fully responsive layout optimized for mobile, tablet, and desktop devices.
-Custom Cursor: A unique cursor effect with GSAP-driven animations (disabled on mobile for better UX).
-Skill Showcase: Interactive progress bars and stats highlighting technical expertise and achievements.
-Glassmorphism UI: Modern design with gradient backgrounds, blurred cards, and hover effects.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Tech Stack
+Currently, two official plugins are available:
 
-Frontend: React, Next.js, TypeScript, Tailwind CSS
-Animations: Framer Motion, GSAP, ScrollTrigger
-3D Graphics: Spline
-Deployment: [Add your deployment platform, e.g., Vercel, Netlify]
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Getting Started
+## Expanding the ESLint configuration
 
-Clone the repository:git clone https://github.com/your-username/your-repo-name.git
-
-
-Install dependencies:npm install
-
-
-Run the development server:npm run dev
-
-
-Open http://localhost:3000 in your browser.
-
-Contributing
-Feel free to open issues or submit pull requests for improvements or bug fixes. All contributions are welcome!
-License
-This project is licensed under the MIT License.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
