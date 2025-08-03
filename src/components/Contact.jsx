@@ -45,6 +45,9 @@ const Contact = () => {
             [e.target.name]: e.target.value
         })
     }
+    const [rating, setRating] = useState(0);
+    const [averageRating, setAverageRating] = useState(4.6); // mock average
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -185,32 +188,6 @@ const Contact = () => {
                             </div>
                         </motion.div>
 
-                        {/* Social Links */}
-                        {/* <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                            viewport={{ once: true }}
-                            className="bg-gradient-to-br from-gray-900/80 to-violet-900/40 backdrop-blur-xl rounded-2xl p-6 border border-violet-500/20 hover:border-violet-400/40 transition-all duration-500"
-                        >
-                            <h3 className="text-xl font-bold mb-6 text-violet-300">Follow Me</h3>
-                            <div className="flex space-x-4">
-                                {socialLinks.map((social) => {
-                                    const Icon = social.icon
-                                    return (
-                                        <motion.a
-                                            key={social.label}
-                                            whileHover={{ scale: 1.1, y: -5 }}
-                                            whileTap={{ scale: 0.9 }}
-                                            href={social.href}
-                                            className={`cursor-none p-3 bg-gray-800/50 rounded-xl border border-violet-500/20 hover:border-violet-400/40 transition-all duration-300 ${social.color}`}
-                                        >
-                                            <Icon className="w-5 h-5" />
-                                        </motion.a>
-                                    )
-                                })}
-                            </div>
-                        </motion.div> */}
 
                         {/* Working Hours */}
                         <motion.div
@@ -253,7 +230,7 @@ const Contact = () => {
                             <FiSend className="w-6 h-6 mr-3" />
                             Send Message
                         </h3>
-                        
+
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
@@ -317,6 +294,28 @@ const Contact = () => {
                                 I'll get back to you within 24 hours. For urgent matters, feel free to call directly.
                             </p>
                         </form>
+                        <div className="mt-10 text-center">
+                            <h4 className="text-lg font-semibold text-violet-300 mb-3">Rate this website</h4>
+
+                            <div className="flex justify-center gap-2 mb-2">
+                                {[1, 2, 3, 4, 5].map((star) => (
+                                    <button
+                                        key={star}
+                                        onClick={() => setRating(star)}
+                                        type="button"
+                                        className={`text-2xl transition-transform transform hover:scale-125 ${rating >= star ? 'text-yellow-400' : 'text-gray-500'
+                                            }`}
+                                    >
+                                        ★
+                                    </button>
+                                ))}
+                            </div>
+
+                            <p className="text-sm text-gray-400">
+                                Average rating: <span className="font-medium text-white">{averageRating.toFixed(1)}</span> / 5
+                            </p>
+                        </div>
+
                     </motion.div>
                 </div>
 
@@ -332,10 +331,10 @@ const Contact = () => {
                         Ready to Start Your Project?
                     </h3>
                     <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-                        Whether it's a complex web application, mobile app, or full-stack solution, 
+                        Whether it's a complex web application, mobile app, or full-stack solution,
                         I'm here to turn your ideas into reality with cutting-edge technology and exceptional user experience.
                     </p>
-                    
+
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <motion.a
                             whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)" }}
@@ -346,7 +345,7 @@ const Contact = () => {
                             <FiPhone className="w-5 h-5" />
                             <span>Call Now</span>
                         </motion.a>
-                        
+
                         <motion.a
                             whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)" }}
                             whileTap={{ scale: 0.95 }}
