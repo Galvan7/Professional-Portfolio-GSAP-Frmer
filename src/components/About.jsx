@@ -50,25 +50,27 @@ const About = () => {
     }, [])
 
     const skills = [
-        { name: "React", level: 95, color: "from-sky-500 to-blue-500" },
-        { name: "Next.js", level: 93, color: "from-blue-600 to-gray-800" },
-        { name: "Node.js", level: 90, color: "from-green-500 to-lime-500" },
-        { name: "Golang", level: 89, color: "from-cyan-600 to-blue-600" },
-        { name: "Python", level: 88, color: "from-yellow-400 to-orange-400" },
-        { name: "C++", level: 85, color: "from-gray-500 to-blue-400" },
-        { name: "PostgreSQL", level: 85, color: "from-purple-600 to-purple-400" },
-        { name: "Oracle", level: 82, color: "from-orange-600 to-red-500" },
-        { name: "AWS", level: 82, color: "from-yellow-500 to-orange-500" },
-        { name: "DevOps", level: 80, color: "from-red-600 to-pink-500" },
-        { name: "TypeScript", level: 92, color: "from-indigo-500 to-blue-500" }
+        { name: "Golang", level: 97, color: "from-cyan-400 to-sky-500" },       // bright cyan → sky blue (eye-catching top)
+        { name: "React", level: 96, color: "from-sky-400 to-blue-500" },        // sky → deep blue
+        { name: "Next.js", level: 95, color: "from-blue-400 to-indigo-500" },   // cool blue → indigo for depth
+        { name: "TypeScript", level: 94, color: "from-indigo-400 to-violet-500" }, // indigo → violet
+        { name: "Python", level: 94, color: "from-yellow-300 to-amber-400" },   // bright yellow → amber for warmth
+        { name: "C++", level: 92, color: "from-slate-400 to-blue-400" },        // subtle gray-blue for a techy feel
+        { name: "PostgreSQL", level: 88, color: "from-purple-400 to-fuchsia-500" }, // purple → fuchsia pops nicely
+        { name: "Redis", level: 86, color: "from-red-400 to-orange-500" },      // warm, aggressive tone
+        { name: "AWS", level: 85, color: "from-amber-400 to-orange-500" },      // amber → orange (matches AWS theme)
+        { name: "Docker", level: 84, color: "from-teal-400 to-cyan-500" },      // teal → cyan (matches Docker whale)
+        { name: "Node.js", level: 83, color: "from-emerald-400 to-green-500" }, // emerald → green (matches Node theme)
     ];
 
 
+
+
     const stats = [
-        { number: "50+", label: "Projects Completed", icon: "🚀" },
-        { number: "3+", label: "Years Experience", icon: "⚡" },
-        { number: "15+", label: "Technologies Mastered", icon: "🛠️" },
-        { number: "99%", label: "Client Satisfaction", icon: "⭐" }
+        { number: "10+", label: "Projects Completed", icon: "🚀" },
+        { number: "1+", label: "Years Experience", icon: "⚡" },
+        { number: "18+", label: "Technologies Mastered", icon: "🛠️" },
+        { number: "97%", label: "Client Satisfaction", icon: "⭐" }
     ]
 
     return (
@@ -110,7 +112,7 @@ const About = () => {
                             <p className="text-gray-300 leading-relaxed mb-4">
                                 Started my coding journey at 16, fascinated by the power of technology to solve real-world problems.
                                 What began as a simple curiosity—wondering how websites and apps actually work—soon evolved into a deep passion for building scalable, high-performance systems that people can trust.
-                                I spent countless hours learning how things work under the hood—first with static sites, then diving into programming languages, backend systems, and cloud infrastructure. 
+                                I spent countless hours learning how things work under the hood—first with static sites, then diving into programming languages, backend systems, and cloud infrastructure.
 
                                 Today, I’m driven by the same curiosity, but now with a clear mission: to engineer systems that not only solve problems but scale with impact.
                             </p>
