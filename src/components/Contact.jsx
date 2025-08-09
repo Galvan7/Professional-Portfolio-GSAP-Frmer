@@ -61,21 +61,21 @@ const Contact = () => {
         {
             icon: FiMail,
             label: "Email",
-            value: "aman.goswami@techmail.com",
-            href: "mailto:aman.goswami@techmail.com",
+            value: "amangoswami2k3@gmail.com",
+            href: "mailto:amangoswami2k3@gmail.com",
             color: "from-blue-500 to-cyan-500"
         },
         {
             icon: FiPhone,
             label: "Phone",
-            value: "+1 (555) 123-4567",
-            href: "tel:+15551234567",
+            value: "+91 9853071788",
+            href: "tel:+919853071788",
             color: "from-green-500 to-emerald-500"
         },
         {
             icon: FiMapPin,
             label: "Location",
-            value: "San Francisco, CA",
+            value: "Bhubaneswar, Odisha",
             href: "#",
             color: "from-red-500 to-pink-500"
         },
@@ -92,19 +92,19 @@ const Contact = () => {
         {
             icon: FiGithub,
             label: "GitHub",
-            href: "https://github.com/amangoswami",
+            href: "https://github.com/Galvan7",
             color: "hover:text-gray-300"
         },
         {
             icon: FiLinkedin,
             label: "LinkedIn",
-            href: "https://linkedin.com/in/amangoswami",
+            href: "https://www.linkedin.com/in/amangoswamiofc/",
             color: "hover:text-blue-400"
         },
         {
             icon: FiTwitter,
             label: "Twitter",
-            href: "https://twitter.com/amangoswami",
+            href: "https://x.com/Theomastix45",
             color: "hover:text-sky-400"
         },
         {
@@ -116,9 +116,9 @@ const Contact = () => {
     ]
 
     const workingHours = [
-        { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM PST" },
-        { day: "Saturday", hours: "10:00 AM - 2:00 PM PST" },
-        { day: "Sunday", hours: "Closed" }
+        { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM IST" },
+        { day: "Saturday", hours: "10:00 AM - 2:00 PM IST" },
+        { day: "Sunday", hours: ":)" }
     ]
 
     return (
@@ -339,7 +339,7 @@ const Contact = () => {
                         <motion.a
                             whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)" }}
                             whileTap={{ scale: 0.95 }}
-                            href="tel:+15551234567"
+                            href="tel:+919853071788"
                             className="cursor-none px-8 py-4 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-violet-600/50 flex items-center justify-center space-x-2"
                         >
                             <FiPhone className="w-5 h-5" />
@@ -349,7 +349,7 @@ const Contact = () => {
                         <motion.a
                             whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)" }}
                             whileTap={{ scale: 0.95 }}
-                            href="mailto:aman.goswami@techmail.com"
+                            href="mailto:amangoswami2k3@gmail.com"
                             className="cursor-none px-8 py-4 bg-transparent border-2 border-violet-600 hover:bg-violet-600/20 text-violet-300 hover:text-white rounded-xl font-bold text-lg transition-all duration-300 flex items-center justify-center space-x-2"
                         >
                             <FiMail className="w-5 h-5" />
