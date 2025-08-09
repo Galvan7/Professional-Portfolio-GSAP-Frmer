@@ -37,106 +37,84 @@ const Experience = () => {
     const experiences = [
         {
             id: 1,
-            company: "TechNova Solutions",
-            position: "Senior Full-Stack Engineer",
-            duration: "2023 - Present",
-            location: "San Francisco, CA",
-            type: "Full-time",
-            description: "Leading development of next-generation fintech solutions serving 2M+ users globally. Architected microservices infrastructure that improved system performance by 300% while reducing operational costs by 40%.",
+            company: "KFin Technologies Limited",
+            position: "SDE Intern",
+            duration: "Dec 2024 – Present",
+            location: "Bhubaneswar, Odisha",
+            type: "Internship",
+            description: "Contributing to large-scale fintech and mutual fund data systems, optimizing performance, scalability, and maintainability across reporting, workflow, and analytics platforms.",
             achievements: [
-                "Spearheaded migration to cloud-native architecture, resulting in 99.99% uptime",
-                "Built real-time trading platform processing $50M+ daily transactions",
-                "Mentored team of 8 developers, improving code quality metrics by 60%",
-                "Implemented AI-driven fraud detection reducing false positives by 75%"
+                "Rebuilt PDF generation engine using Golang and Typst, doubling report speed and adding dynamic links & page numbers",
+                "Engineered Python-based data pipeline ingesting 3+ crore records across 79 tables with environment toggles, parallelized writes to reduce API costs, and added automated reconciliation emails",
+                "Designed & implemented RBAC system in TypeScript-Golang workflow platform, enabling fine-grained access control across modules",
+                "Optimized multi-schema SQL queries for high-performance search, filtering, and comparative analytics, reducing query times by 40%"
             ],
-            technologies: ["React", "Node.js", "Kubernetes", "PostgreSQL", "AWS", "TypeScript"],
-            logo: "🚀"
+            technologies: ["Golang", "Typst", "Python", "PostgreSQL", "TypeScript", "AWS", "SQL"],
+            logo: "🏦"
         },
         {
             id: 2,
-            company: "DataSphere Analytics",
-            position: "Lead Frontend Developer",
-            duration: "2022 - 2023",
-            location: "New York, NY",
-            type: "Full-time",
-            description: "Transformed data visualization experiences for Fortune 500 companies. Created interactive dashboards processing billions of data points with sub-second response times.",
+            company: "HCL Technologies",
+            position: "Academic Trainee",
+            duration: "Jun 2023 – Aug 2023",
+            location: "Noida, Uttar Pradesh",
+            type: "Internship",
+            description: "Worked on cloud-based security monitoring and SIEM automation to enhance cybersecurity response efficiency.",
             achievements: [
-                "Developed award-winning dashboard used by 500+ enterprise clients",
-                "Reduced initial load times by 85% through advanced optimization techniques",
-                "Led UI/UX redesign increasing user engagement by 200%",
-                "Established design system adopted across 15+ product teams"
+                "Leveraged Microsoft Azure Sentinel for security monitoring, achieving 84% efficiency in Red-Blue Team exercises (2nd highest among summer interns)",
+                "Automated SIEM security tasks, improving operational efficiency by 20% and reducing response time by 28%"
             ],
-            technologies: ["Next.js", "D3.js", "TypeScript", "Python", "Redis", "Docker"],
-            logo: "📊"
+            technologies: ["Microsoft Azure Sentinel", "SIEM", "Automation Scripts"],
+            logo: "🛡️"
         },
         {
             id: 3,
-            company: "CloudVault Security",
-            position: "Backend Developer",
-            duration: "2021 - 2022",
-            location: "Austin, TX",
-            type: "Full-time",
-            description: "Built enterprise-grade security solutions protecting critical infrastructure for government and healthcare sectors. Developed APIs handling millions of security events daily.",
-            achievements: [
-                "Designed distributed system processing 10M+ security events/day",
-                "Achieved SOC 2 Type II compliance for entire platform",
-                "Reduced API response time from 200ms to 15ms through optimization",
-                "Implemented zero-downtime deployment pipeline"
-            ],
-            technologies: ["Golang", "Apache Kafka", "Elasticsearch", "MongoDB", "gRPC"],
-            logo: "🔒"
-        },
-        {
-            id: 4,
-            company: "StartupLab Incubator",
-            position: "Full-Stack Developer Intern",
-            duration: "2020 - 2021",
-            location: "Boston, MA",
+            company: "Quizzy EdTech",
+            position: "Quality Assurance Intern",
+            duration: "Sep 2023 – Mar 2024",
+            location: "Remote",
             type: "Internship",
-            description: "Rapid prototyping and MVP development for early-stage startups. Worked across diverse industries from e-commerce to healthcare, gaining invaluable cross-domain expertise.",
+            description: "Enhanced DevOps pipelines and data systems for an EdTech platform, improving deployment efficiency and AI-driven content generation accuracy.",
             achievements: [
-                "Delivered 12+ MVPs with 95% client satisfaction rate",
-                "Contributed to 3 startups that raised $5M+ in Series A funding",
-                "Mastered rapid development cycles with 2-week sprint deliveries",
-                "Built reusable component library used across multiple projects"
+                "Implemented dynamic DevOps pipeline with IAM-based user setups, Kubernetes load balancing, Docker containerization, and Jenkins CI/CD",
+                "Developed dataset enabling new bot to generate expansive CSAT exam question bank with 97% execution accuracy"
             ],
-            technologies: ["React", "Express.js", "MongoDB", "Firebase", "Stripe API"],
-            logo: "💡"
+            technologies: ["Kubernetes", "Docker", "Jenkins", "IAM", "Python", "CI/CD"],
+            logo: "🎓"
         }
-    ]
+    ];
+
 
     const education = [
         {
             id: 1,
-            institution: "Massachusetts Institute of Technology",
-            degree: "Master of Science in Computer Science",
-            duration: "2019 - 2021",
-            location: "Cambridge, MA",
-            gpa: "3.9/4.0",
-            description: "Specialized in Distributed Systems and Machine Learning. Thesis on 'Quantum-Resistant Cryptography for IoT Networks' received Distinguished Research Award.",
+            institution: "Veer Surendra Sai University Of Technology",
+            degree: "Bachelor of Technology in Information Technology",
+            duration: "2021 - 2025",
+            location: "Burla, Odisha",
+            gpa: "9.45/10",
+            description: "Specialized in Cloud Architecture, networking and software developemt along with clean coding and lifecycle management",
             achievements: [
-                "Graduate Research Assistant - MIT CSAIL",
-                "Published 3 papers in top-tier conferences (SOSP, OSDI)",
-                "Winner - MIT TechCrunch Disrupt Competition 2020",
-                "Teaching Assistant for Advanced Algorithms (6.046)"
+                "Batch topper throughout 4 years of BTech in Information Technology",
+                "Published 2 papers in ITER paper conference: Violence Detection in Live video feeds",
+                "Mentored 12+ freshers in Lift off C++ program where we introduced freshers to the amazing world of code",
             ],
             logo: "🎓"
         },
         {
             id: 2,
-            institution: "University of California, Berkeley",
-            degree: "Bachelor of Science in Computer Science",
-            duration: "2015 - 2019",
-            location: "Berkeley, CA",
-            gpa: "3.8/4.0",
+            institution: "St Joseph's Convent Higher Secondary School",
+            degree: "Matriculation & Intermediate",
+            duration: "2008 - 2021",
+            location: "Sambalpur, Odisha",
+            gpa: "9.2/10",
             description: "Magna Cum Laude graduate with focus on Software Engineering and Human-Computer Interaction. Active member of ACM and IEEE student chapters.",
             achievements: [
-                "Dean's List - All 8 semesters",
                 "President - Computer Science Student Association",
-                "Hackathon Winner - Cal Hacks 2018 (Best Technical Implementation)",
-                "Summer Research Intern - Google DeepMind"
+                "Top 20 Percentile - Throught 10 years of formal education",
+                "Hackathon Winner - Telegraph Sharpest Minds (Best Technical Implementation)",
             ],
-            logo: "🐻"
+            logo: "🥇"
         }
     ]
 
@@ -197,13 +175,13 @@ const Experience = () => {
                             >
                                 {/* Timeline line */}
                                 <div className="absolute left-6 top-16 bottom-0 w-0.5 bg-gradient-to-b from-violet-600 to-purple-600 group-last:hidden"></div>
-                                
+
                                 <div className="flex items-start space-x-6">
                                     {/* Timeline dot */}
                                     <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-violet-600 to-purple-600 rounded-full flex items-center justify-center text-2xl shadow-lg shadow-violet-600/50 group-hover:scale-110 transition-transform duration-300">
                                         {exp.logo}
                                     </div>
-                                    
+
                                     {/* Content */}
                                     <div className="flex-1 bg-gradient-to-br from-gray-900/80 to-violet-900/40 backdrop-blur-xl rounded-2xl p-6 border border-violet-500/20 hover:border-violet-400/40 transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-violet-600/25">
                                         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
@@ -222,9 +200,9 @@ const Experience = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <p className="text-gray-300 mb-4 leading-relaxed">{exp.description}</p>
-                                        
+
                                         <div className="space-y-3 mb-4">
                                             <h5 className="text-violet-300 font-semibold">Key Achievements:</h5>
                                             <ul className="space-y-2">
@@ -236,7 +214,7 @@ const Experience = () => {
                                                 ))}
                                             </ul>
                                         </div>
-                                        
+
                                         <div className="flex flex-wrap gap-2">
                                             {exp.technologies.map((tech) => (
                                                 <span
@@ -253,7 +231,7 @@ const Experience = () => {
                         ))}
                     </div>
                 )
-            
+
             case 'education':
                 return (
                     <div className="space-y-8">
@@ -284,9 +262,9 @@ const Experience = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <p className="text-gray-300 mb-4 leading-relaxed">{edu.description}</p>
-                                        
+
                                         <div className="space-y-3">
                                             <h5 className="text-violet-300 font-semibold">Highlights:</h5>
                                             <ul className="space-y-2">
@@ -304,7 +282,7 @@ const Experience = () => {
                         ))}
                     </div>
                 )
-                
+
             case 'certifications':
                 return (
                     <div className="grid md:grid-cols-2 gap-6">
@@ -377,11 +355,10 @@ const Experience = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`cursor-none flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                                    activeTab === tab.id
+                                className={`cursor-none flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${activeTab === tab.id
                                         ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-lg shadow-violet-600/30'
                                         : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-violet-500/20'
-                                }`}
+                                    }`}
                             >
                                 <Icon className="w-4 h-4" />
                                 <span>{tab.label}</span>
