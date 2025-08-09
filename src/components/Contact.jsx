@@ -51,10 +51,10 @@ const Contact = () => {
         e.preventDefault()
         setIsLoading(true) // Show loader
         emailjs.send(
-            "service_b43kgsg",
-            "template_a1ytkgj",
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
             formData,
-            "yWKfjKKjlgsDrxfTz"
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
             .then(() => {
                 setIsLoading(false) // Hide loader

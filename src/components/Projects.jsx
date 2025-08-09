@@ -34,7 +34,7 @@ const Projects = () => {
             description: "End-to-end system enabling businesses to create, trigger, and monitor bulk Email, WhatsApp, SMS, APIs communications via a flow-driven interface, template editor, campaigns and event dashboards. This platform is being used by AMCs for thier communication.",
             image: "src/assets/NX.png",
             category: "fullstack",
-            tags: ["Golang","Typescript", "RabbitMQ","Postgresql" , "Cedar", "Zustand", "AWS", "Framer", "Tailwind", , "Redis", "Tanstack"],
+            tags: ["Golang", "Typescript", "RabbitMQ", "Postgresql", "Cedar", "Zustand", "AWS", "Framer", "Tailwind", , "Redis", "Tanstack"],
             github: "https://github.com/Galvan7/Notification-Xchange",
             live: "https://demo.notificationxchange.app/",
             metrics: { AMCs: "20+", messages: "5M+/mo", uptime: "99.9%" },
@@ -60,7 +60,7 @@ const Projects = () => {
             longDescription: "Built a visually immersive portfolio with React, Next.js, Tailwind CSS, Framer Motion, GSAP, and Spline 3D. Features include smooth animations, scroll-triggered effects, 3D hero section, custom cursor interactions, and responsive glassmorphism design. Optimized for performance and accessibility while highlighting technical expertise with interactive skill showcases.",
             image: "src/assets/Portfolio.png",
             category: "frontend",
-            tags: ["React", "Tailwind CSS",  "GSAP", "Spline"],
+            tags: ["React", "Tailwind CSS", "GSAP", "Spline"],
             github: "https://github.com/Galvan7/Professional-Portfolio-GSAP-Frmer",
             live: "#",
             metrics: { visitors: "5K+/mo", bounceRate: "35%", loadTime: "<1.5s" },
@@ -250,10 +250,12 @@ const Projects = () => {
                         <motion.button
                             whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)" }}
                             whileTap={{ scale: 0.95 }}
+                            onClick={() => window.open('https://github.com/Galvan7', '_blank')}
                             className="cursor-none px-8 py-4 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-violet-600/50"
                         >
                             Start a Project
                         </motion.button>
+
                     </div>
                 </motion.div>
             </div>
