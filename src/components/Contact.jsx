@@ -4,6 +4,7 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiTwitter, FiSend, FiClock, FiGlobe } from "react-icons/fi"
 import { BiBookBookmark } from "react-icons/bi"
+import emailjs from "emailjs-com"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,10 +16,10 @@ const Contact = () => {
         email: '',
         message: ''
     })
+    const [isLoading, setIsLoading] = useState(false) // New loading state
 
     useEffect(() => {
         const cards = cardsRef.current?.children
-
         if (cards) {
             gsap.fromTo(cards,
                 { opacity: 0, y: 50, rotationX: 15 },
@@ -45,17 +46,30 @@ const Contact = () => {
             [e.target.name]: e.target.value
         })
     }
-    const [rating, setRating] = useState(0);
-    const [averageRating, setAverageRating] = useState(4.6); // mock average
-
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // Handle form submission here
-        console.log('Form submitted:', formData)
-        // Reset form
-        setFormData({ name: '', email: '', message: '' })
+        setIsLoading(true) // Show loader
+        emailjs.send(
+            "service_b43kgsg",
+            "template_a1ytkgj",
+            formData,
+            "yWKfjKKjlgsDrxfTz"
+        )
+            .then(() => {
+                setIsLoading(false) // Hide loader
+                alert("Message sent successfully!")
+                setFormData({ name: '', email: '', message: '' }) // Reset form
+            })
+            .catch((err) => {
+                setIsLoading(false) // Hide loader
+                console.error("Failed to send message:", err)
+                alert("Oops! Something went wrong. Please try again.")
+            })
     }
+
+    const [rating, setRating] = useState(0)
+    const [averageRating, setAverageRating] = useState(4.6) // mock average
 
     const contactInfo = [
         {
@@ -129,7 +143,6 @@ const Contact = () => {
                 <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-600/25 rounded-full blur-3xl animate-pulse delay-1000"></div>
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-pink-600/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
             </div>
-
             <div className="relative z-10">
                 {/* Section Header */}
                 <motion.div
@@ -147,7 +160,6 @@ const Contact = () => {
                     </p>
                     <div className="w-24 h-1 bg-gradient-to-r from-violet-600 to-purple-600 mx-auto rounded-full"></div>
                 </motion.div>
-
                 {/* Main Content Grid */}
                 <div className="grid lg:grid-cols-2 gap-16 mb-16">
                     {/* Left Column - Contact Info */}
@@ -187,8 +199,6 @@ const Contact = () => {
                                 })}
                             </div>
                         </motion.div>
-
-
                         {/* Working Hours */}
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
@@ -217,7 +227,6 @@ const Contact = () => {
                             </div>
                         </motion.div>
                     </div>
-
                     {/* Right Column - Contact Form */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
@@ -230,7 +239,6 @@ const Contact = () => {
                             <FiSend className="w-6 h-6 mr-3" />
                             Send Message
                         </h3>
-
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
@@ -245,9 +253,9 @@ const Contact = () => {
                                     placeholder="Your Name"
                                     required
                                     className="cursor-none w-full px-4 py-3 border border-gray-600 rounded-xl focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-gray-800/50 text-white placeholder-gray-400 transition-all duration-300 hover:border-violet-400/50"
+                                    disabled={isLoading} // Disable input during loading
                                 />
                             </div>
-
                             <div>
                                 <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                                     Email Address *
@@ -261,9 +269,9 @@ const Contact = () => {
                                     placeholder="your.email@example.com"
                                     required
                                     className="cursor-none w-full px-4 py-3 border border-gray-600 rounded-xl focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-gray-800/50 text-white placeholder-gray-400 transition-all duration-300 hover:border-violet-400/50"
+                                    disabled={isLoading} // Disable input during loading
                                 />
                             </div>
-
                             <div>
                                 <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
                                     Project Details *
@@ -277,48 +285,55 @@ const Contact = () => {
                                     placeholder="Tell me about your project, timeline, budget, and how I can help bring your vision to life..."
                                     required
                                     className="cursor-none w-full px-4 py-3 border border-gray-600 rounded-xl focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-gray-800/50 text-white placeholder-gray-400 transition-all duration-300 hover:border-violet-400/50 resize-none"
+                                    disabled={isLoading} // Disable textarea during loading
                                 />
                             </div>
-
                             <motion.button
                                 type="submit"
-                                whileHover={{ scale: 1.02, boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)" }}
-                                whileTap={{ scale: 0.98 }}
-                                className="cursor-none w-full px-6 py-4 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-violet-600/50 flex items-center justify-center space-x-2"
+                                whileHover={{ scale: isLoading ? 1 : 1.02, boxShadow: isLoading ? "none" : "0 20px 40px rgba(139, 92, 246, 0.3)" }}
+                                whileTap={{ scale: isLoading ? 1 : 0.98 }}
+                                className={`cursor-none w-full px-6 py-4 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-violet-600/50 flex items-center justify-center space-x-2 ${isLoading ? 'opacity-75 cursor-not-allowed' : ''}`}
+                                disabled={isLoading} // Disable button during loading
                             >
-                                <FiSend className="w-5 h-5" />
-                                <span>Send Message</span>
+                                {isLoading ? (
+                                    <div className="flex items-center justify-center">
+                                        <svg className="animate-spin h-5 w-5 text-white mr-2" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                        Sending...
+                                    </div>
+                                ) : (
+                                    <>
+                                        <FiSend className="w-5 h-5" />
+                                        <span>Send Message</span>
+                                    </>
+                                )}
                             </motion.button>
-
                             <p className="text-gray-400 text-sm text-center">
                                 I'll get back to you within 24 hours. For urgent matters, feel free to call directly.
                             </p>
                         </form>
                         <div className="mt-10 text-center">
                             <h4 className="text-lg font-semibold text-violet-300 mb-3">Rate this website</h4>
-
                             <div className="flex justify-center gap-2 mb-2">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                     <button
                                         key={star}
                                         onClick={() => setRating(star)}
                                         type="button"
-                                        className={`text-2xl transition-transform transform hover:scale-125 ${rating >= star ? 'text-yellow-400' : 'text-gray-500'
-                                            }`}
+                                        className={`text-2xl transition-transform transform hover:scale-125 ${rating >= star ? 'text-yellow-400' : 'text-gray-500'}`}
                                     >
                                         ★
                                     </button>
                                 ))}
                             </div>
-
                             <p className="text-sm text-gray-400">
                                 Average rating: <span className="font-medium text-white">{averageRating.toFixed(1)}</span> / 5
                             </p>
                         </div>
-
                     </motion.div>
                 </div>
-
                 {/* CTA Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
@@ -334,7 +349,6 @@ const Contact = () => {
                         Whether it's a complex web application, mobile app, or full-stack solution,
                         I'm here to turn your ideas into reality with cutting-edge technology and exceptional user experience.
                     </p>
-
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <motion.a
                             whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)" }}
@@ -345,7 +359,6 @@ const Contact = () => {
                             <FiPhone className="w-5 h-5" />
                             <span>Call Now</span>
                         </motion.a>
-
                         <motion.a
                             whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)" }}
                             whileTap={{ scale: 0.95 }}
@@ -357,7 +370,6 @@ const Contact = () => {
                         </motion.a>
                     </div>
                 </motion.div>
-
                 {/* Footer */}
                 <motion.div
                     initial={{ opacity: 0 }}
