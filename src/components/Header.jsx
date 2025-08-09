@@ -11,14 +11,18 @@ export const Header = () => {
     message: ""
   });
   const [isLoading, setIsLoading] = useState(false); // New loading state
-
+  const [statusMessage, setStatusMessage] = useState("");
+  const [statusType, setStatusType] = useState(""); // 'success' or 'error'
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setIsLoading(true); // Show loader
+    setIsLoading(true);
+    setStatusMessage("");
+    setStatusType("");
+
     emailjs.send(
       import.meta.env.VITE_EMAILJS_SERVICE_ID,
       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -26,15 +30,22 @@ export const Header = () => {
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
       .then(() => {
-        setIsLoading(false); // Hide loader
-        alert("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" }); // Clear form
-        closeContactform();
+        setIsLoading(false);
+        setStatusType("success");
+        setStatusMessage("✅ Message sent!");
+        setFormData({ name: "", email: "", message: "" });
+
+        // Close after short delay
+        setTimeout(() => {
+          setStatusMessage("");
+          closeContactform();
+        }, 1500);
       })
       .catch((err) => {
-        setIsLoading(false); // Hide loader
         console.error("Failed to send message:", err);
-        alert("Oops! Something went wrong. Please try again.");
+        setIsLoading(false);
+        setStatusType("error");
+        setStatusMessage("❌ Something went wrong");
       });
   };
 
@@ -278,7 +289,7 @@ export const Header = () => {
                   whileHover={{ scale: isLoading ? 1 : 1.03 }}
                   whileTap={{ scale: isLoading ? 1 : 0.97 }}
                   className={`w-full px-4 py-2 bg-gradient-to-r from-violet-600 to-violet-400 hover:from-violet-700 to-purple-700 transition-all duration-300 rounded-lg shadow-md hover:shadow-violet-600/50 relative ${isLoading ? 'opacity-75 cursor-not-allowed' : ''}`}
-                  disabled={isLoading} // Disable button during loading
+                  disabled={isLoading}
                 >
                   {isLoading ? (
                     <div className="flex items-center justify-center">
@@ -288,10 +299,15 @@ export const Header = () => {
                       </svg>
                       Sending...
                     </div>
+                  ) : statusMessage ? (
+                    <span className={statusType === "success" ? "text-green-300" : "text-red-300"}>
+                      {statusMessage}
+                    </span>
                   ) : (
-                    'Send Message'
+                    "Send Message"
                   )}
                 </motion.button>
+
               </form>
             </motion.div>
           </motion.div>

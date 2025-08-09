@@ -16,6 +16,8 @@ const Contact = () => {
         email: '',
         message: ''
     })
+    const [statusMessage, setStatusMessage] = useState("");
+    const [statusType, setStatusType] = useState(""); // 'success' or 'error'
     const [isLoading, setIsLoading] = useState(false) // New loading state
 
     useEffect(() => {
@@ -48,8 +50,11 @@ const Contact = () => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        setIsLoading(true) // Show loader
+        e.preventDefault();
+        setIsLoading(true);
+        setStatusMessage("");
+        setStatusType("");
+
         emailjs.send(
             import.meta.env.VITE_EMAILJS_SERVICE_ID,
             import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -57,16 +62,24 @@ const Contact = () => {
             import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
             .then(() => {
-                setIsLoading(false) // Hide loader
-                alert("Message sent successfully!")
-                setFormData({ name: '', email: '', message: '' }) // Reset form
+                setIsLoading(false);
+                setStatusType("success");
+                setStatusMessage("✅ Message sent!");
+                setFormData({ name: "", email: "", message: "" });
+
+                // Close after short delay
+                setTimeout(() => {
+                    setStatusMessage("");
+                    closeContactform();
+                }, 1500);
             })
             .catch((err) => {
-                setIsLoading(false) // Hide loader
-                console.error("Failed to send message:", err)
-                alert("Oops! Something went wrong. Please try again.")
-            })
-    }
+                console.error("Failed to send message:", err);
+                setIsLoading(false);
+                setStatusType("error");
+                setStatusMessage("❌ Something went wrong");
+            });
+    };
 
     const [rating, setRating] = useState(0)
     const [averageRating, setAverageRating] = useState(4.6) // mock average
@@ -290,10 +303,10 @@ const Contact = () => {
                             </div>
                             <motion.button
                                 type="submit"
-                                whileHover={{ scale: isLoading ? 1 : 1.02, boxShadow: isLoading ? "none" : "0 20px 40px rgba(139, 92, 246, 0.3)" }}
-                                whileTap={{ scale: isLoading ? 1 : 0.98 }}
-                                className={`cursor-none w-full px-6 py-4 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-violet-600/50 flex items-center justify-center space-x-2 ${isLoading ? 'opacity-75 cursor-not-allowed' : ''}`}
-                                disabled={isLoading} // Disable button during loading
+                                whileHover={{ scale: isLoading ? 1 : 1.03 }}
+                                whileTap={{ scale: isLoading ? 1 : 0.97 }}
+                                className={`w-full px-4 py-2 bg-gradient-to-r from-violet-600 to-violet-400 hover:from-violet-700 to-purple-700 transition-all duration-300 rounded-lg shadow-md hover:shadow-violet-600/50 relative ${isLoading ? 'opacity-75 cursor-not-allowed' : ''}`}
+                                disabled={isLoading}
                             >
                                 {isLoading ? (
                                     <div className="flex items-center justify-center">
@@ -303,13 +316,15 @@ const Contact = () => {
                                         </svg>
                                         Sending...
                                     </div>
+                                ) : statusMessage ? (
+                                    <span className={statusType === "success" ? "text-green-300" : "text-red-300"}>
+                                        {statusMessage}
+                                    </span>
                                 ) : (
-                                    <>
-                                        <FiSend className="w-5 h-5" />
-                                        <span>Send Message</span>
-                                    </>
+                                    "Send Message"
                                 )}
                             </motion.button>
+
                             <p className="text-gray-400 text-sm text-center">
                                 I'll get back to you within 24 hours. For urgent matters, feel free to call directly.
                             </p>
