@@ -129,7 +129,7 @@ const About = () => {
                             <p className="text-gray-300 leading-relaxed">
                                 "Code is poetry in motion." I believe in writing clean, maintainable code that not only works
                                 flawlessly but also tells a story. Every function, every component, every API endpoint is crafted
-                                with intention, scalability, and user experience at its core.
+                                with intention, scalability, and user experience at its core. Because in the end, great software is more than logic and syntax — it’s a living narrative of ideas, problem-solving, and craftsmanship that grows and inspires with every line written.
                             </p>
                         </div>
                     </motion.div>
