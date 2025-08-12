@@ -98,7 +98,8 @@ export const Header = () => {
                   damping: 20,
                   delay: 0.7 + idx * 0.2
                 }}
-                href="#" key={item} className="relative text-gray-800 dark:text-gray-200 hover:violet-600 dark:hover:text-violet-400 font-medium transition-colors duration-300 group">
+                href={`#${item}`}
+                key={item} className="relative text-gray-800 dark:text-gray-200 hover:violet-600 dark:hover:text-violet-400 font-medium transition-colors duration-300 group">
                 {item}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-violet-600 group-hover:w-full transition-all duration-300">
                 </span>
@@ -150,9 +151,11 @@ export const Header = () => {
             damping: 15
           }}
           onClick={openContactform}
-          className="cursor-none ml-4 px-4 py-2 rounded-xl bg-gradient-to-r from-gray-400 to-gray-100 text-violet-700 font-bold hover:from-violet-700 hover:to-purple-700 hover:text-white transition-all duration-500">
+          className="max-[400px]:hidden cursor-none ml-4 px-4 py-2 rounded-xl bg-gradient-to-r from-gray-400 to-gray-100 text-violet-700 font-bold text-sm md:text-base hover:from-violet-700 hover:to-purple-700 hover:text-white transition-all duration-500"
+        >
           Hire Me
         </motion.button>
+
         {/* end */}
         {/* mobile menu button */}
         <div className="md:hidden flex items-center">
@@ -188,23 +191,23 @@ export const Header = () => {
                   delay: 0.7 + idx * 0.2
                 }}
                 onClick={toggleMenu}
-                href="#" key={item} className="relative text-gray-300 font-medium py-2 ">
+                href={`#${item}`} key={item} className="relative text-gray-300 font-medium py-2 ">
                 {item}
               </motion.a>)
           })}
         </nav>
         <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
           <div className="flex space-x-5">
-            <a href="#">
+            <a href="https://github.com/Galvan7">
               <FiGithub className="h-5 w-5 text-gray-300" />
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/amangoswamiofc/">
               <FiLinkedin className="h-5 w-5 text-gray-300" />
             </a>
-            <a href="#">
+            <a href="https://x.com/Theomastix45">
               <FiTwitter className="h-5 w-5 text-gray-300" />
             </a>
-            <a href="#">
+            <a href="https://drive.google.com/file/d/1bgSj9cMvGDhp7uUexZB75ItkqahuZc-w/view?usp=drivesdk">
               <BiBookBookmark className="h-5 w-5 text-gray-300" />
             </a>
           </div>

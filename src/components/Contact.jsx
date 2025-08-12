@@ -149,7 +149,7 @@ const Contact = () => {
     ]
 
     return (
-        <section ref={sectionRef} className="min-h-screen bg-gradient-to-b from-black via-violet-900/20 to-black py-20 lg:px-24 px-10 relative overflow-hidden">
+        <section id="Contact" ref={sectionRef} className="min-h-screen bg-gradient-to-b from-black via-violet-900/20 to-black py-20 lg:px-24 px-10 relative overflow-hidden">
             {/* Background Effects */}
             <div className="absolute inset-0 opacity-20">
                 <div className="absolute top-20 left-20 w-96 h-96 bg-violet-600/30 rounded-full blur-3xl animate-pulse"></div>
@@ -183,7 +183,7 @@ const Contact = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-gradient-to-br from-gray-900/80 to-violet-900/40 backdrop-blur-xl rounded-2xl p-6 border border-violet-500/20 hover:border-violet-400/40 transition-all duration-500"
+                            className="bg-gradient-to-br from-gray-900/80 to-violet-900/40 backdrop-blur-xl rounded-2xl p-2 md:p-6 border border-violet-500/20 hover:border-violet-400/40 transition-all duration-500"
                         >
                             <h3 className="text-2xl font-bold mb-6 text-violet-300 flex items-center">
                                 <FiMail className="w-6 h-6 mr-3" />

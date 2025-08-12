@@ -2,10 +2,10 @@ import { motion } from "framer-motion"
 import Spline from '@splinetool/react-spline';
 const Hero = () => {
     return (
-        <section className="min-h-screen bg-gradient-to-b from-violet-900 to-black flex xl:flex-row flex-col-reverse items-center justify-between lg:px-24 px-10 relative">
+        <section id="Home" className="min-h-screen bg-gradient-to-b from-violet-900 to-black flex xl:flex-row flex-col-reverse items-center lg:justify-between lg:px-24 px-10 relative">
 
             {/* left section  */}
-            <div className="z-40 xl:mb-0 mb-[-20%] space-y-10">
+            <div className="z-40 md:mb-[20%] xl:mb-0 space-y-10">
                 <motion.h1 initial={{ opacity: 0, y: 80 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
@@ -35,9 +35,10 @@ const Hero = () => {
                         </p>
                 </motion.div>
             </div>
-
+            <div className="h-[400px] sm:w-100%">
+            <Spline className="lg:absolute xl:right-[-28%] right-0 lg:top-0 " scene="https://prod.spline.design/78Ib7TD0WMPurGIB/scene.splinecode" />
+            </div>
             {/* right section  */}
-            <Spline className="absolute xl:right-[-28%] right-0 top-[-20%] lg:top-0" scene="https://prod.spline.design/78Ib7TD0WMPurGIB/scene.splinecode" />
         </section>
     )
 }

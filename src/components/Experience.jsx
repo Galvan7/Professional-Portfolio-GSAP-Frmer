@@ -314,7 +314,7 @@ const Experience = () => {
     }
 
     return (
-        <section ref={sectionRef} className="min-h-screen bg-gradient-to-b from-black via-violet-900/20 to-black py-20 lg:px-24 px-10 relative overflow-hidden">
+        <section id="Experience" ref={sectionRef} className="min-h-screen bg-gradient-to-b from-black via-violet-900/20 to-black py-20 lg:px-24 px-10 relative overflow-hidden">
             {/* Background Effects */}
             <div className="absolute inset-0 opacity-20">
                 <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-violet-600/30 rounded-full blur-3xl animate-pulse"></div>
